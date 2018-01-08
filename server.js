@@ -2,7 +2,7 @@ import morgan from 'morgan';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import router from './routers/router';
+import routes from './routes/routes';
 import config from './config/index';
 
 mongoose.connect(config.db.connection);
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(morgan('combined'));
-app.use('/api', router);
+app.use('/api', routes);
 
 var port = process.env.PORT || 3000;
 
