@@ -15,7 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('combined'));
 app.use('/api', router);
 
-const server = app.listen(3000, () => {
+var port = process.env.PORT || 3000;
+
+const server = app.listen(port, () => {
     const { address, port } = server.address();
     console.log(`Listening at address http://${address}:${port}`);
 });
