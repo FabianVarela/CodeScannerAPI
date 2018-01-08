@@ -3,9 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import router from './routers/router';
-import config from './config/default';
-
-require('dotenv').config();
+import config from './config/index';
 
 mongoose.connect(config.db.connection);
 
